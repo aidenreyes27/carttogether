@@ -2,8 +2,8 @@
 
 Shared household grocery list with live sync and bill splitting.
 
+- **Live site:** https://carttogether.onrender.com
 - **GitHub:** https://github.com/aidenreyes27/carttogether
-- **Deploy to Render (free):** https://render.com/deploy?repo=https://github.com/aidenreyes27/carttogether
 
 ## Features
 
@@ -22,10 +22,3 @@ cd frontend && npm install && npm run dev
 ```
 
 Open http://localhost:5173
-
-## Production (single server)
-
-```bash
-cd frontend && npm ci && npm run build
-cd ../backend && uv sync && DATA_DIR=./data uv run uvicorn app.main:app --host 0.0.0.0 --port 8000
-```
