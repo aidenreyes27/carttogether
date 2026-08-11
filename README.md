@@ -2,7 +2,8 @@
 
 Shared household grocery list with live sync and bill splitting.
 
-**Live demo:** *(URL after deploy)*
+- **GitHub:** https://github.com/aidenreyes27/carttogether
+- **Deploy to Render (free):** https://render.com/deploy?repo=https://github.com/aidenreyes27/carttogether
 
 ## Features
 
@@ -28,7 +29,3 @@ Open http://localhost:5173
 cd frontend && npm ci && npm run build
 cd ../backend && uv sync && DATA_DIR=./data uv run uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
-
-## Deploy
-
-Includes `Dockerfile` + `render.yaml` for [Render](https://render.com). Connect the GitHub repo and deploy as a Docker web service.
