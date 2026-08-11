@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: carttogether
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATA_DIR
+        value: /data
+    disk:
+      name: carttogether-data
+      mountPath: /data
+      sizeGB: 1

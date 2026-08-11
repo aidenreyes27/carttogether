@@ -1,24 +1,34 @@
-# CartTogether — Shared Grocery List
+# CartTogether
 
-A simple household grocery list you can share with a code.
+Shared household grocery list with live sync and bill splitting.
 
-## What it does
+**Live demo:** *(URL after deploy)*
 
-- Create a list and get a 6-character share code
-- Roommate joins with the code
-- Add items with quantity + category
-- Check items off while shopping
-- Clear bought items when you’re done
+## Features
 
-## Run
+- Shared lists via share code
+- Live sync, shop mode, aisle grouping
+- Split bill: prices, who paid, who shares, settle-up math
+
+## Local development
 
 ```bash
-# backend (port 8000)
+# backend
 cd backend && uv sync && uv run uvicorn app.main:app --reload --port 8000
 
-# frontend (port 5173)
-export PATH="$HOME/.local/node/bin:$PATH"
+# frontend
 cd frontend && npm install && npm run dev
 ```
 
 Open http://localhost:5173
+
+## Production (single server)
+
+```bash
+cd frontend && npm ci && npm run build
+cd ../backend && uv sync && DATA_DIR=./data uv run uvicorn app.main:app --host 0.0.0.0 --port 8000
+```
+
+## Deploy
+
+Includes `Dockerfile` + `render.yaml` for [Render](https://render.com). Connect the GitHub repo and deploy as a Docker web service.
